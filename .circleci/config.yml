@@ -1,0 +1,22 @@
+version: 2.1
+orbs:
+  gcp-gcr: carecloud/gcp-gcr@0.0.3
+workflows:
+  build_and_push_dev_image:
+    jobs:
+      - gcp-gcr/build-and-push-image:
+          image: helloworld-dev
+          registry-url: eu.gcr.io
+          filters:
+            branches:
+              only: develop
+
+  build_and_push_master_image:
+    jobs:
+      - gcp-gcr/build-and-push-image:
+          image: helloworld
+          registry-url: eu.gcr.io
+          filters:
+            branches:
+              only: master
+    
