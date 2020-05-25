@@ -10,7 +10,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes("<html><head><title>https://techtest.senseon.io</title></head>", "utf-8"))
         self.wfile.write(bytes("<body>", "utf-8"))
-        self.wfile.write(bytes("<p>Welcome to Senseon!</p>", "utf-8"))
+        self.wfile.write(bytes("<p>Welcome to Senseon.</p>", "utf-8"))
         self.wfile.write(bytes("</body></html>", "utf-8"))
 
 if __name__ == "__main__":        
